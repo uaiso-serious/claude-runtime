@@ -160,7 +160,7 @@ O script em `rootfs/usr/local/bin/claude-start.sh`:
 ### Construindo a Imagem `claude-runtime`
 
 ```bash
-docker build --build-arg GIT_SHA=$(git rev-parse --short HEAD) -t claude-runtime:latest .
+docker build -t claude-runtime:latest .
 ```
 
 ### Executando o `claude-runtime`

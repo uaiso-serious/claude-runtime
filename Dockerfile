@@ -20,10 +20,6 @@ USER root
 COPY rootfs/usr/local/bin/ /usr/local/bin/
 USER agent
 
-# SHA do commit do build (docker build --build-arg GIT_SHA=$(git rev-parse --short HEAD)); vira a tag image: no Langfuse
-ARG GIT_SHA=unknown
-ENV RUNNER_IMAGE_SHA=$GIT_SHA
-
 RUN echo '{"hasCompletedOnboarding": true, "projects": {"/workspace": {"hasTrustDialogAccepted": true}}}' > ~/.claude.json \
  && mkdir -p ~/.claude
 
